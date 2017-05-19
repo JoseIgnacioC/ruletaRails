@@ -1,0 +1,26 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ruletaRails
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: password    
+  app:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/ruletaRails
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DB_USER: root
+      DB_NAME: ruletaRails
+      DB_PASSWORD: password
+      DB_HOST: db
