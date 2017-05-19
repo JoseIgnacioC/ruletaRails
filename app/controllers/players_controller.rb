@@ -25,6 +25,7 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(player_params)
+    @player.money = 10000
 
     respond_to do |format|
       if @player.save
@@ -38,7 +39,7 @@ class PlayersController < ApplicationController
   end
 
   # PATCH/PUT /players/1
-  # PATCH/PUT /players/1.json
+  # PATCH/PUT /players/1.jsonPablo
   def update
     respond_to do |format|
       if @player.update(player_params)
