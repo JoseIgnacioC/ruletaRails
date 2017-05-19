@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  dateTime: 2017-05-19 02:04:29
+  conservative: false
+  result: MyString
+
+two:
+  number: 1
+  dateTime: 2017-05-19 02:04:29
+  conservative: false
+  result: MyString
